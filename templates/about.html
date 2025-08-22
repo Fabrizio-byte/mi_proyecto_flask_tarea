@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+<!-- Sobrescribe el bloque de título -->
+{% block title %}Acerca de Nosotros{% endblock %}
+
+<!-- Sobrescribe el bloque de contenido -->
+{% block content %}
+<h2 class="text-3xl font-bold mb-4">Acerca de este Proyecto</h2>
+<p class="text-lg leading-relaxed">
+    Este proyecto es un ejemplo de cómo utilizar Flask, Python y plantillas HTML para construir una aplicación web simple pero poderosa.
+</p>
+<p class="mt-4">
+    Puedes ver cómo se ha modificado el archivo <code>app.py</code> para manejar múltiples rutas y cómo las plantillas <code>index.html</code> y <code>about.html</code> heredan la estructura del archivo <code>base.html</code>.
+</p>
+{% endblock %}
