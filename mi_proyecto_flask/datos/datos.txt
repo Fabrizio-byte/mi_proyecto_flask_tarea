@@ -1,0 +1,9 @@
+# Ejemplo de ruta para guardar datos de un formulario
+@app.route('/guardar', methods=['POST'])
+def guardar_datos_txt():
+    # Asume que el formulario envía un campo 'dato'
+    dato = request.form['dato']
+    with open('datos/datos.txt', 'a') as f:
+        f.write(dato + '\n')
+    return redirect(url_for('index'))
+    

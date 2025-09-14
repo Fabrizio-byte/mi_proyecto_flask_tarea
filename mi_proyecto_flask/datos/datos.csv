@@ -1,0 +1,16 @@
+@app.route('/guardar_csv', methods=['POST'])
+def guardar_csv():
+    # Asume los mismos datos que para JSON
+    nombre = request.form['nombre']
+    email = request.form['email']
+    
+    # Verifica si el archivo existe para no escribir los encabezados dos veces
+    file_exists = os.path.exists('datos/datos.csv')
+    
+    with open('datos/datos.csv', 'a', newline='') as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(['nombre', 'email']) # Escribe los encabezados solo si es un archivo nuevo
+        writer.writerow([nombre, email])
+        
+    return redirect(url_for('index'))

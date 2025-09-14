@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres y la vista para dispositivos móviles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bloque para el título de la página, que cada plantilla puede sobrescribir -->
+    <title>{% block title %}{% endblock %}</title>
+    
+    <!-- Enlaza la hoja de estilos estática -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Contenedor principal con un fondo oscuro y padding -->
+    <header class="bg-blue-600 text-white p-4 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Título del sitio web -->
+            <h1 class="text-2xl font-bold">Mi Proyecto Flask</h1>
+            <!-- Lista de enlaces de navegación -->
+            <ul class="flex space-x-4">
+                <li><a href="{{ url_for('home') }}" class="hover:underline">Inicio</a></li>
+                <li><a href="{{ url_for('about') }}" class="hover:underline">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor principal para el contenido de la página -->
+    <main class="container mx-auto mt-8 p-4 bg-white rounded-lg shadow-md">
+        <!-- Bloque para el contenido principal, que cada plantilla puede sobrescribir -->
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

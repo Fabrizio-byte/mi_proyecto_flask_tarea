@@ -1,0 +1,8 @@
+@app.route('/ver_datos_txt')
+def ver_datos_txt():
+    datos = []
+    # Asegúrate de que el archivo exista antes de leerlo
+    if os.path.exists('datos/datos.txt'):
+        with open('datos/datos.txt', 'r') as f:
+            datos = [linea.strip() for linea in f.readlines()]
+    return render_template('resultado.html', datos=datos, tipo_dato="TXT")

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+<!-- Sobrescribe el bloque de título -->
+{% block title %}Página de Inicio{% endblock %}
+
+<!-- Sobrescribe el bloque de contenido -->
+{% block content %}
+<h2 class="text-3xl font-bold mb-4">¡Bienvenido a mi sitio web con Flask!</h2>
+<p class="text-lg leading-relaxed">
+    Este es el contenido de la página de inicio. Aquí puedes encontrar información general y el punto de partida de nuestro sitio.
+</p>
+<p class="mt-4">
+    Hemos utilizado Jinja para crear plantillas dinámicas que nos permiten reutilizar la estructura de nuestro sitio.
+</p>
+{% endblock %}

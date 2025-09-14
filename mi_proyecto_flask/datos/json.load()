@@ -1,0 +1,7 @@
+@app.route('/ver_datos_json')
+def ver_datos_json():
+    datos = []
+    if os.path.exists('datos/datos.json'):
+        with open('datos/datos.json', 'r') as f:
+            datos = json.load(f)
+    return render_template('resultado.html', datos=datos, tipo_dato="JSON")

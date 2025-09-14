@@ -1,0 +1,30 @@
+/*
+ * Este es el archivo CSS para tu proyecto Flask.
+ * Puedes agregar aquí tus propios estilos para personalizar el diseño.
+ */
+
+/*
+ * Tailwind CSS es una librería de clases de utilidad que ya está
+ * enlazada en la plantilla base.html.
+ * Las clases como 'bg-gray-100', 'text-white', 'p-4', etc.,
+ * provienen directamente de Tailwind.
+ * No es necesario escribir CSS personalizado para esos estilos.
+ */
+
+/* * Si deseas agregar estilos personalizados, puedes hacerlo aquí.
+ * Por ejemplo, puedes definir un estilo para un botón personalizado.
+ */
+
+.custom-button {
+    background-color: #3b82f6; /* color azul de Tailwind: blue-500 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #2563eb; /* color azul oscuro de Tailwind: blue-600 */
+}
+

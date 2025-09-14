@@ -1,0 +1,6 @@
+@app.route('/ver_datos_sqlite')
+def ver_datos_sqlite():
+    # Consulta todos los registros de la tabla Usuario
+    usuarios = Usuario.query.all()
+    # Pasa la lista de objetos Usuario a la plantilla
+    return render_template('resultado.html', datos=usuarios, tipo_dato="SQLite")

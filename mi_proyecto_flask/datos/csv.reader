@@ -1,0 +1,10 @@
+@app.route('/ver_datos_csv')
+def ver_datos_csv():
+    datos = []
+    if os.path.exists('datos/datos.csv'):
+        with open('datos/datos.csv', 'r') as f:
+            reader = csv.reader(f)
+            # Opcional: saltar la fila de encabezados
+            next(reader, None) 
+            datos = [fila for fila in reader]
+    return render_template('resultado.html', datos=datos, tipo_dato="CSV")

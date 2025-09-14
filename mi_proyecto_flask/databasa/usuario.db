@@ -1,0 +1,30 @@
+# Ruta para guardar un nuevo usuario
+@app.route('/guardar_usuario', methods=['POST'])
+def guardar_usuario():
+    nombre = request.form.get('nombre')
+    email = request.form.get('email')
+    
+    if nombre and email:
+        nuevo_usuario = Usuario(nombre=nombre, email=email)
+        db.session.add(nuevo_usuario)
+        db.session.commit()
+        return "Usuario guardado en la base de datos"
+    return "Datos de usuario incompletos"
+
+    # Ruta para leer todos los usuarios
+@app.route('/ver_usuarios')
+def ver_usuarios():
+    usuarios = Usuario.query.all()
+    # Pasa los usuarios a una plantilla para renderizarlos
+    return render_template('ver_usuarios.html', usuarios=usuarios)
+    @app.route('/guardar_sqlite', methods=['POST'])
+def guardar_sqlite():
+    nombre = request.form['nombre']
+    email = request.form['email']
+    
+    # Crea un nuevo objeto Usuario y lo añade a la sesión de la base de datos
+    nuevo_usuario = Usuario(nombre=nombre, email=email)
+    db.session.add(nuevo_usuario)
+    db.session.commit() # Guarda los cambios en la base de datos
+    
+    return redirect(url_for('index'))
